@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "watch": true,
+        "target": "ES6",
+        "noEmitOnError": true,
+        "strict": false,
+        "noImplicitAny": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "src/index.ts"
+    ]
+}

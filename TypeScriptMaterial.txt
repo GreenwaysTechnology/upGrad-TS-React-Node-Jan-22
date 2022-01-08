@@ -1,0 +1,1022 @@
+..............................................................................................
+
+What is typescript?
+
+ Typescript is object oriented and functional style programming language.
+ Typescript that scales javascript.
+ scaling is nothing but expanding features.
+ Typescript is super set of Javascript.
+ Typescript is programming language to write javascript apps.
+
+Why Typescript?
+
+
+What is Javascript?
+
+ -Javascript is programming language.
+
+Styles of programming language
+ -Object oriented
+ -Procedure oriented
+ -Functional oriented
+ -Event driven
+
+Some languages designed with single style - c++,java,C#,c
+Some languages designed with multiple styles (hybrid) - Javascript,java 8,C#,Scala,Groovy,Kotiln....
+
+"Javascript is Object based,functional Style,Event driven programming language."
+
+
+Object Oriented Principles:
+...........................
+
+1.Abstraction
+2.Encapsulation
+3.Hierarchy
+4.Typing
+5.Modularity
+----------------------
+6.Concurrency
+7.Persistency
+
+if any language follows the first 5 prinicples 100% , those languages are called object
+oriented programming.
+
+java script does not follow the first 5 principles , so it is called as object based languge.
+
+
+functional pure vs style:
+
+-if any language follows 100% functional programming principles those languages are called
+"purely functional",if not functional style.
+.............................................................................................
+					Typing
+				     (Data Types)
+.............................................................................................
+
+classification of data types:
+
+1.Strongly typed /Static Typed
+
+ The type of variable is verified during compile time.
+ int a =100;
+ a=true;
+  This is compile time error.
+
+ eg:
+  c,C++,Java,C#....
+
+2.Weakly typed/ Dynamic Typed
+
+ Dynamic typed language / weak typed language -----Javascript
+        The type of variable is not verified during compile time, runtime verfication.
+
+ variable=value
+ var i=10;
+ i=true
+ i="hello"
+.............................................................................................
+
+JavaScript is not object oriented
+Javascript  is not strongly typed 
+
+.............................................................................................
+
+		Think: why js was designed to be dynamic typed?
+.............................................................................................
+
+Drawbacks of dynamic typing:
+    -We cant build enterprise consistent application.
+
+ -Object based 
+    if we  want to design , object oriented system in js not possible.
+
+Why javascript:
+  Javascript was created for process html pages.
+
+1989 - Web Project was started   
+
+1990 -  The first webserver,Browser was created
+
+1994 - Netscap started
+
+1995 - The first netscap navigator came to access web pages 
+
+1996 - Netscap decided to put java inside web browser.
+
+static web page- before netscap
+dynamic web page -netscap
+
+----Static web----- only hand coded html pages.
+
+1996 - CREATED Dynamic web : how to work with databases
+     - CGI - C,perl.
+ J2EE- Servlets,JSP
+ MS  - ASP
+ OPEN SOURCE - PHP.
+
+Netscap decided to build client side web technoloy- once html is rendered into web browser
+how to change that html onfly. 
+
+Netscap decided to create a new programming language, who recurited Brendan Eich
+,the programmer , asked to create new programming language for netscap navigator.
+
+-Objective of Project
+
+-It should be like java but it should not be java -light weight - scripting
+-deadline is 10 days.
+
+Time line:
+
+1.javascript project started 1995
+1.first name of the language was "Mocha"
+2.language was renamed to "Live Script" -1996
+3.language was renamed to "java Script" -1996
+............................................................................................
+				 ECMA
+...................................................................................
+
+Ecma International is an industry association dedicated to the standardization of information and communication systems.
+
+After language ready, which was submitted to standard body "ECMA international"
+
+1996---1997 : JS 1.0 =>ES 1.0
+
+1997- 1998 :  ES 2.0: It did not come
+
+1999 :  ES 3
+
+2007 : ES 4
+
+2008 : ES 5
+.....
+
+2012-2015 : ES 6
+........
+2016  ONWARDS : es 7,es 8, ............
+.............................................................................................
+				..............................................................................................
+			2008 - Introduction of  Node.js : Enter prise Javascript
+..............................................................................................
+in order to build enterprise javascript apps, community started thinking about "Object oriented Models".
+                      How to introduce object oriented features into language.
+..............................................................................................
+Fundamentally js is object based,type less language, then it is difficult to build object oriented systems.
+
+in order to create better javascript, 2009, The project was started to make javascript looks like other object oriented langugages.
+ 
+ - classes,interfaces,modules.... : Coffee script (intension was to introduce object oriented features like classes,interfaces).
+
+
+YOu write code in coffeescript
+
+Employee.coffee
+
+class Employee {
+
+}
+compiler - coffee Employee.coffe
+|
+Employee.js - compiled code -pure javascript 
+|
+run on browser
+
+
+Coffee script had issues still - Type system- No strongly typed.
+
+
+2010, Microsoft started project to create object oriented javascript using C#
+
+Objective of MS Project:
+
+ -Add Type System - Strong Typing
+ -Classes
+ -Modules
+ -interfaces
+ -encapulation keywords
+ .......
+C# ---compiler------plain javascript.
+
+MS Failed to port this project to public because
+
+Problems with C#
+ 1.PORTABLITY.
+ 2.COMPLEXITY
+..............................................................................................
+
+2012 - ECMA released new javascript spec (ES 6) in which They introduced
+  
+   - classes
+   - let 
+   - const
+   - advanced object literals
+   - Promises
+  etc..........
+
+MS decided to rewrite Typed Javascript project based "ECMA 6 Standards".
+
+MS Started redesigning the whole project, target ecma 6 as base language.
+
+{ES 6 + Static Typing + added new extra fetures} => The brith of Typescript.
+
+
+Arch of TS:
+
+					
+				      TS language
+					    |
+					  ES 6
+					    |
+					  ES 5
+
+
+Typescript----compile----Plain javascript
+
+Typescript is strongly typed, object oriented  javascript.
+
+Now you can use type script to build better object oriented systems using javascript.
+
+TS is not compititor or replacer for javascript but it complements js.
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+Type script is a typed superset of javascript that compiles to plain javascript
+
+                  any browser,any host, any os, any device
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+Typescript features
+
+1.variable,datatypes
+2.classes
+3.interfaces
+4.encapsulation
+5.inheritance
+6.composition and dependency injection
+7.modularity
+8.meta programming using decorators(annotations)
+
+Typescript compiler
+
+
+Lab:
+
+Create Ts Project.
+How to write ts programs
+How to compile ts programs
+How to run compiled ts programs
+
+How to save file Name?
+
+fileName.ts
+ index.ts
+
+
+Typescript compiler
+
+
+Lab:
+
+Create Ts Project.
+How to write ts programs
+How to compile ts programs
+How to run compiled ts programs
+
+Steps:
+
+1.create basic project layout
+
+E:\session\upgrad> mkdir ts-apps
+
+2.go to ts-apps folder
+
+
+E:\session\upgrad>cd ts-apps
+
+E:\session\upgrad\ts-apps>
+
+3.create package.json file
+
+
+E:\session\upgrad\ts-apps> npm init -y
+
+4.create src folder 
+
+E:\session\upgrad\ts-apps>  mkdir src 
+
+5.install typescript compiler
+
+ npm install typescript --save-dev
+
+6.lanuch ide 
+E:\session\upgrad\ts-apps>  code .
+
+7.npm run compile
+
+8.test inside browser
+  <script src="src/index.js">
+..............................................................................................
+
+............................................................................................
+............................................................................................
+				Coding part
+
+1.how to create code
+
+2.how to compile code
+
+3.how to run code
+
+
+create ts programs - fileName.ts
+
+src/index.ts
+
+console.log("hello")
+
+compile ts program
+
+-add compiler config
+
+package.json
+
+ "compile": "tsc src/index.ts"
+
+>npm run compile
+
+-generates js file
+src/index.js
+
+->on browser
+
+lanuch webbrowser and see console
+<script src="src/index.js"></script>
+..............................................................................................
+syntax
+syntax
+
+  tsc --compileroptions filename.ts
+
+compiler options can be supplied in line or in a file(tsconfig.json)
+
+Use case:
+
+Separate source code and compiled code into different directories.
+
+source code
+ src
+   -index.ts
+
+ build
+    -index.js
+
+how to tell the compiler to place compiled code into build folder.
+
+compiler options:
+
+ syntax
+
+  tsc --compileroptions filename
+
+  tsc --outDir build   src/index.ts
+
+package.json
+{
+  "name": "mytsapps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile" : "tsc --outDir build   src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}
+
+index.html
+<body>
+    <h1>Typescript apps</h1>
+    <script src="build/index.js"></script>
+</body>
+...........
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+Use case: if i write code ,every time i need to compile program mannually how to avoid that.
+
+ we compiler option 
+   --watch
+
+ "scripts": {
+    "build" : "tsc  --watch --outDir  build   src/index.ts"
+  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+what if i want to add more and more compiler options
+
+
+tsc --watch --outDir build  --options --options  src/index.ts
+  
+ This is not scaleable, and maintainable. , if configuration grows.
+
+Solution : 
+ we need to create simple ts config file where you can place all configurations.
+
+create file called
+ tsconfig.json outside src folder, where we can tell all compiler options
+
+tsconfig.json
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "watch": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "src/index.ts"
+    ]
+}
+
+package.json
+{
+  "name": "tsapps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile" : "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
+..............................................................................................
+
+ES 6 core concepts:
+
+Variable delcaration;
+
+var - es 5
+let  - es6 
+const - es6
+
+var is not block scoped and let and const is block scoped.
+
+In ES6 APPS  let and const are recommended.
+
+The problems with ES 6:
+
+When es6 was introduced, the node and browsers vendors were not ready to accept
+es6 keywords
+
+let ,const never work in older node and browsers.
+
+that time browers were supported only ES 5 version of js.
+
+browsers were not ready that time, but develoers felt,and supported lot on es6.
+
+Then how to run es 6 code on browsers which dont support.
+
+The birth of "Transpilers"  : a special compilers which converts es6 to es5,
+
+developer write code in es6 ---->transpiler-->es 5
+
+Type script code is written based on ES 6 code only.
+
+eg: babel.js 
+ higer version -to lower version
+
+eg : tsc
+ es6 to es5
+ +
+ type verification
+
+         "ts compiler by default converts es6 code into es5."
+
+let---------var
+
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "watch": true,
+        "target" :"ES6"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "src/index.ts"
+    ]
+}
+...........................................................................................
+					Type System
+...........................................................................................
+
+1.Dynamic types
+   Runtime Types
+2.Static types
+   Compile Time Types
+
+Javascript is Dynamic typed language,Types are identified during runtime only.
+
+Types are identified based on "literals" in javascript.
+
+Literals:
+
+1.number
+2.string
+3.boolean
+4.undefined
+5.NaN
+6.infinity
+7.null
+8.function
+9.object
+
+How to know the type of(runtime type of variable) ?
+
+"type of" operator
+
+Js types:
+1.number
+   number,NaN,infinity
+2.string
+3.undefined
+4.function
+5.object
+   object,null
+6.boolean
+
+//Java script Runtime types
+let str = 'hello';
+let a = 10;
+let isValid = true;
+let price; // undefined
+let emp = null;
+let today = new Date()  // object
+let sayHello = function () {  // function
+    return 'Hello'
+}
+let avg  =10/0 ; //infinity
+let totalPrice = price * 100 //NaN
+
+console.log(`Types`)
+console.log(`str ${typeof str}`)
+console.log(`a ${typeof a}`)
+console.log(`isValid ${typeof isValid}`)
+console.log(`price ${typeof price}`)
+console.log(`emp ${typeof emp}`)
+console.log(`today ${typeof today}`)
+console.log(`sayHello ${typeof sayHello}`)
+console.log(`avg ${typeof avg}`)
+console.log(`totalPrice ${typeof totalPrice}`)
+
+	"TS has created strong data types based on the static types"
+
+
+Type script offers the follow type annotations
+................................................
+
+primitive datatypes
+1.string
+2.number
+3.boolean
+
+Object types:
+............
+Object
+Array
+Enum
+
+Other types
+void
+any
+unknown
+Function
+
+Custom Types
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,		
+
+       "Prmitive types are represented in smaller case - string,number,boolean"
+       "Object types are represented in TitleCase - Employee,Array,Promise"
+
+
+Syntax  of strongly typed
+
+var/let/const variable:type = literal
+
+int a =10;
+
+a = "hello" ;;compiler will throw error : compile time vertification.
+
+//string 
+//strong type : string,number,booleans
+
+
+let firstName: string = "Subramanian"
+let lastName: string = "Murugan";
+let salary: number = 10000
+let isValid: boolean = true;
+
+//reinitalize the variables with different types
+
+/**
+ *  error TS2322: Type 'number' is not assignable to type 'string'.
+
+11 firstName =100
+   ~~~~~~~~~
+
+[11:48:20 am] Found 1 error. Watching for file changes.
+ */
+//firstName =100
+..............................................................................................
+				Typescript Compiler Behaviour
+
+
+By default Typescript compiler compiles the code even though there is compile time error.
+
+if you want to stop generating code, if there is compile time error.
+
+noEmitOnError:true
+
+tsconfig.json
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "watch": true,
+        "target": "ES6",
+        "noEmitOnError": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "src/index.ts"
+    ]
+}
+..............................................................................................
+				Type erasor
+.............................................................................................
+
+ Types will be erased after compilation; any ts specific notations will not be available 
+after code is compiled.
+
+.............................................................................................
+
+Type Declartion syntax:
+.......................
+
+1.expilicit
+  let variableName:type = literal
+  let firstName:string ="Subramanian"
+
+2.implicit : Type inference
+
+   if any variable is assigned with specific type value
+
+ let variableName = value
+ 
+let a =100;
+
+ here a type is infered as number, in future assignments typescript compile assumes that 
+a value must be numbers only.
+
+//Type inference
+
+//a's type is infered to number
+let a = 10;
+console.log(a)
+/**
+ *  error TS2322: Type 'string' is not assignable to type 'number'.
+
+7 a="test";
+  ~
+ */
+//a="test";
+
+let firstName = "Subramanian";
+let isValid = true;
+//explicit type declration
+let lastName: string = "M"
+..............................................................................................
+				undefined,any,null
+..............................................................................................
+
+if any variable is not initalized , its value would be undefined
+
+//undefined
+let a;
+console.log(a)
+a = 10
+console.log(a)
+a = "Hello"
+console.log(a)
+
+The default behaviour of undefined is , the variable can hold any value in future assigments.
+
+Implicit undefined
+let a;
+
+Explicit undefined;
+
+let b:undefined
+
+//undefined
+
+let a;
+console.log(a)
+a = 10
+console.log(a)
+a = "Hello"
+console.log(a)
+
+//explicit
+let b:undefined
+console.log(b);
+/**
+ * - error TS2322: Type '90' is not assignable to type 'undefined'.
+
+13 b=90;
+   ~
+
+ */
+//b=90;
+
+null:
+.....
+ It is similar to undefined. No valid literal is assigned. No valid Object literal is assigned.
+null itself object , but no value is present.
+
+In javascript apps, null means that variable is going to hold object in future assignements.
+
+let emp = null;
+
+//null
+let emp = null;
+console.log(emp)
+emp = {
+    id: 1,
+    name: 'foo'
+}
+console.log(emp)
+.............................................................................................
+				Property access on undefined and null variables
+..............................................................................................
+
+
+let emp = null;
+console.log(emp.id)
+
+index.js:3 Uncaught TypeError: Cannot read properties of null (reading 'id')
+    at index.js:3
+
+Falsy values:
+
+In javascript every thing is true execept the following values
+
+1.boolean false
+2.0
+3.empty string "" /''
+4.undefined
+5.null
+6.NaN
+
+
+How to fix this runtime error?
+
+Way -1 - null check code
+let emp = null;
+
+if (emp) {
+    console.log(emp.id)
+} else {
+}
+//using tenary
+emp ? console.log(emp.id) : "";
+
+
+Way -2 : Using typescript Safe Navigation Operator.
+
+console.log(emp?.id) //undefined
+// null and property property
+
+let emp = null;
+
+if (emp) {
+    console.log(emp.id)
+} else {
+}
+//using tenary
+emp ? console.log(emp.id) : "";
+
+//typescript safe navigation operator ; with undefined
+console.log(emp?.id)
+//safe navigation operator with default value
+console.log(emp?.id ? emp.id : 0)
+
+//elivish operator??
+console.log(emp?.id ?? 0)
+
+	"Elivish operator works on undefined values as values"
+
+.............................................................................................
+	  What if i want to protect variables should not have null and undefiend itself
+	
+By default, values like null and undefined are assignable to any other type. This can make writing some code easier, but forgetting to handle null and undefined is the cause of countless bugs in the world - some consider it a billion dollar mistake! The strict flag makes handling null and undefined more explicit, and spares us from worrying about whether we forgot to handle null and undefined
+
+
+let emp = null;
+/**
+ *  error TS2531: Object is possibly 'null'.
+
+3 console.log(emp.id)
+              ~~~
+
+ */
+// emp = {
+//     id:1
+// }
+console.log(emp.id)
+
+............................................................................................
+					any
+............................................................................................
+
+Typescript as of now forces us to use   follow type rules, that means the variable is declared with number type , it should hold number only.
+
+What if i want loosly typed variables, i dont know in advance what is type of variable would be.
+
+any is good choice.
+
+noImplicitAny
+
+Recall that in some places, TypeScript doesn’t try to infer types for us and instead falls back to the most lenient type: any. This isn’t the worst thing that can happen - after all, falling back to any is just the plain JavaScript experience anyway.
+
+However, using any often defeats the purpose of using TypeScript in the first place. The more typed your program is, the more validation and tooling you’ll get, meaning you’ll run into fewer bugs as you code. Turning on the noImplicitAny flag will issue an error on any variables whose type is implicitly inferred as any.
+
+
+let myvar:any = "hello";
+console.log(myvar.toString())
+.............................................................................................
+			         Functions
+.............................................................................................
+
+Functions and typescript:
+
+Args and Parameters
+Return types
+Default and Optional Parameters
+Arrow Functions
+
+
+Functions args and Parameters:
+//functions
+
+function sayHello() {
+    return 'hello'
+}
+console.log(sayHello());
+
+//function literal syntax
+let hai = function () {
+    return "hai"
+};
+console.log(hai());
+
+//parameters and args
+//Here the variable "name" must have type atleast "any" explicityly or not  implicit any
+//no type is considered "implicit any";
+
+// function sayGreetV1(name:any) {
+//     return `Greet ${name}`
+// }
+function sayGreetV1(name: any) {
+    return `Greet ${name}`
+}
+//
+console.log(sayGreetV1('Subramanian'))
+console.log(sayGreetV1(100))
+
+//function arg type
+
+function sayGreetV2(name: string) {
+    return `Greet ${name}`
+}
+//
+console.log(sayGreetV2('Subramanian'))
+// console.log(sayGreetV2(100))
+//////////////////////////////////////////////////////////////////////////////////////
+//default args : es 6 feature
+function add(a: number = 0, b: number = 0) {
+    return a + b;
+}
+console.log(add(10, 20))
+//skipping values
+console.log(add())
+
+//Extra feature similar to default args : Optinal Args
+
+function multiply(a?: number, b?: number) {
+    return a * b;
+}
+console.log(multiply(10, 20))
+//skipping values
+console.log('res',multiply())
+
+
+...........................................................................................
+Return types:
+
+//return types
+
+//infered return type is string
+function sayHello() {
+    return "Hello"
+}
+function sayHai(): string {
+    return "Hello"
+}
+//void 
+// function doStuff():void {
+//     return ""
+// }
+
+function doStuff(): any {
+    return "Hello"
+}
+
+
+Arrow Functions
+//arrow functions
+
+let add = (a: number = 0, b: number = 0): number => {
+    return a * b;
+}
+console.log(add(10, 10))
+add = (a: number = 0, b: number = 0): number => a * b;
+console.log(add(10, 10))
+............................................................................................
+					Advanced Types: Union
+...........................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
