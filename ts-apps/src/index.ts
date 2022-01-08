@@ -1,8 +1,26 @@
-//arrow functions
-
-let add = (a: number = 0, b: number = 0): number => {
-    return a * b;
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
 }
-console.log(add(10, 10))
-add = (a: number = 0, b: number = 0): number => a * b;
-console.log(add(10, 10))
+console.log(Direction.Up)
+console.log(Direction.Down)
+
+enum UserResponse {
+    No = 0,
+    Yes = 1,
+}
+
+enum Status {
+    No = "Not Ok",
+    Yes = "ok"
+}
+function respond(recipient: string, message: UserResponse): void {
+    // ...
+    console.log(recipient, message)
+}
+
+respond("Princess Caroline", UserResponse.Yes);
+console.log(Status.Yes)
+console.log(Status)

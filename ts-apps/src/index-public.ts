@@ -1,0 +1,21 @@
+
+class Employee {
+    //instance variables
+    public id: number // explicit public
+    public name: string
+    public status: boolean
+    constructor(id: number = 0, name: string = "", status = false) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+    //instance methods
+    public calculate(): number {
+        return 100;
+    }
+}
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+emp = new Employee(1, 'ram', true);
+console.log(emp.id, emp.name, emp.status, emp.calculate())

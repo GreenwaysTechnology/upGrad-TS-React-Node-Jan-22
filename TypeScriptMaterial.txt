@@ -775,11 +775,6 @@ console.log(emp)
 ..............................................................................................
 
 
-let emp = null;
-console.log(emp.id)
-
-index.js:3 Uncaught TypeError: Cannot read properties of null (reading 'id')
-    at index.js:3
 
 Falsy values:
 
@@ -791,6 +786,12 @@ In javascript every thing is true execept the following values
 4.undefined
 5.null
 6.NaN
+
+let emp = null;
+console.log(emp.id)
+
+index.js:3 Uncaught TypeError: Cannot read properties of null (reading 'id')
+    at index.js:3
 
 
 How to fix this runtime error?
@@ -970,14 +971,671 @@ console.log(add(10, 10))
 					Advanced Types: Union
 ...........................................................................................
 
+Union is nothing but a variable can have multiple types or even choices
+
+for eg : id variable may be string or number - 
+
+ id: string | number | myType | ....
+
+//Union type
+
+function Mode(varient: "dark" | "light") {
+    console.log(varient)
+}
+Mode("dark")
+Mode("light")
+
+/**
+ * error TS2345: Argument of type '"medium"' is not assignable to parameter of type '"dark" | "light"'.
+
+8 Mode("medium")
+       ~~~~~~~~
+ */
+//Mode("medium")
+
+function Person(gender: "Male" | "Female" | "Third" | undefined, active: true | false) {
+    console.log(gender, active)
+}
+Person("Female", true)
+
+
+//mutli types
+function PrintId(id: string | number | undefined) {
+    console.log(id)
+}
+PrintId("1");
+PrintId(1);
+PrintId(undefined)
+
+function PrintID(id: string | number) {
+    if (typeof id === "string") {
+        // In this branch, id is of type 'string'
+        console.log(id.toUpperCase());
+    } else {
+        // Here, id is of type 'number'
+        console.log(id.toFixed());
+    }
+
+}
+PrintID("abc")
+PrintID(123.672)
+
+............................................................................................
+				Object oriented Programming
+............................................................................................
+
+1.How to declare class,interfaces.
+2.Object creations
+   => constructors patterns - class
+   => Literal Patterns
+
+// class declaration
+
+class Employee {
+    //instance variables
+    id: number = 0;
+    name: string = "name";
+    status: boolean = false;
+    //instance methods
+    calculate(): number {
+        return 100;
+    }
+}
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id,emp.name, emp.status,emp.calculate())
+
+
+state initalization(instance variable init):
+
+1.direct -hardcoded
+2.after object creation
+3.during object creation - constructor parameters and args
+
+
+Direct Hardcoded:
+//state -instance variable initalization ; 
+class Employee {
+    //direct hardcoded initalization
+    id: number = 0;
+    name: string = "name";
+    status: boolean = false;
+    //instance methods
+    calculate(): number {
+        return 100;
+    }
+}
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id,emp.name, emp.status,emp.calculate())
+
+2.after object creation
+// class declaration
+
+class Employee {
+    //instance variables
+    id: number = 0;
+    name: string = "name";
+    status: boolean = false;
+    //instance methods
+    calculate(): number {
+        return 100;
+    }
+}
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id,emp.name, emp.status,emp.calculate())
+//after object creation
+emp.id =1;
+emp.name = 'Ram';
+emp.status = true;
+console.log(emp.id,emp.name, emp.status,emp.calculate())
+
+............
+During object creation: constructor parameters
+
+
+// class declaration
+
+class Employee {
+    //instance variables
+    id: number
+    name: string
+    status: boolean
+    constructor(id: number = 0, name: string = "", status = false) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+    //instance methods
+    calculate(): number {
+        return 100;
+    }
+}
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+emp = new Employee(1, 'ram', true);
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+..............................................................................................
+				
+.............................................................................................
+				 Encaspulation
+.............................................................................................
+Encapsulation:
+..............
+To Prevent code sharing from one code to another.
+
+code - collection of classes, variables,functions,......
+
+code is represented inside file.
+
+pl provides keywords to ensure that , how  we can allow the code to be shared
+
+TS provides keywords to prevent code sharing
+ 
+ -public - any where
+ -private - with in class 
+ -protected - with in class + inheritance
+
+
+public :
+
+class Employee {
+    //instance variables
+    public id: number // explicit public
+    public name: string
+    public status: boolean
+    constructor(id: number = 0, name: string = "", status = false) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+    //instance methods
+    public calculate(): number {
+        return 100;
+    }
+}
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+emp = new Employee(1, 'ram', true);
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+.........................................................................................
+
+private:
+//private : we cant access out side classes
+
+class Auth {
+    private password: string = "abcd000"
+
+    private generatePassword() {
+        return this.password;
+    }
+    public getPassword() {
+        return this.generatePassword();
+    }
+}
+let auth = new Auth()
+/**
+ *  Property 'password' is private and only accessible within class 'Auth'.
+
+14 console.log(auth.password)
+                    ~~~~~~~~
+ */
+// console.log(auth.password)
+// console.log(auth.generatePassword())
+console.log(auth.getPassword())
+..............................................................................................
+	.............................................................................................
+				Variables Types
+
+
+1.instance variable
+  variable declared inside class
+2.static variables
+  variables delcared inside class with static modifier
+3.local variables
+  variables are declared inside method(including constructor)
+  or method args / constructor args
+
+1.instance variables:
+
+class Employee {
+ id:number; //instance variable
+}
+
+2.static variables
+
+//static  variables
+
+class ErrorMessage {
+    static  SERVER_ERROR = 'Server error';
+    static INVALID_TOKEN = 'Token is invalid';
+    static TOKEN_NOTFOUND = 'Token Not suppllied';
+}
+
+const getInfo = () => {
+    console.log(ErrorMessage.SERVER_ERROR)
+    console.log(ErrorMessage.INVALID_TOKEN)
+    console.log(ErrorMessage.TOKEN_NOTFOUND)
+}
+getInfo();
+
+3.local variables
+ variables are declared inside method(including constructor)
+  or method args / constructor args.
+
+
+//how to reduce class declaration code
+
+//regular class declaration
+class Employee__ {
+    //instance variables
+    public id: number // explicit public
+    public name: string
+    public status: boolean
+    constructor(id: number = 0, name: string = "", status = false) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+    //instance methods
+    public calculate(): number {
+        return 100;
+    }
+}
+
+class Employee {
+    //id: number = 0, name: string = "", status = false - local variables
+    //ts provides an option that , we can convert local variables into instance variables
+    //by adding public/private keywords
+    // constructor(public id: number = 0, public name: string = "", public status = false) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.status = status;
+    // }
+    constructor(public id: number = 0, public name: string = "", public status = false) { }
+    //instance methods
+    public calculate(): number {
+        return 100;
+    }
+}
+
+
+//emp is reference variable , new is keyword, Employee() constructor call
+let emp = new Employee();
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+emp = new Employee(1, 'ram', true);
+console.log(emp.id, emp.name, emp.status, emp.calculate())
+.............................................................................................
+			Hierarchy : HAS- Relationship - Dependency Injection
+.............................................................................................
+
+//has-a
+
+class OrderService {
+    constructor() { }
+    findAll() {
+        return 'Orders'
+    }
+}
+
+class UserService {
+
+}
+
+class OrderController {
+    //has -a 
+    constructor(private orderService: OrderService) { }
+
+    public init() {
+        console.log(this.orderService.findAll())
+    }
+}
+let orderCtrl = new OrderController(new OrderService());
+orderCtrl.init()
+
+/**
+ *  Argument of type 'UserService' is not assignable to parameter of type 'OrderService'.
+  Property 'findAll' is missing in type 'UserService' but required in type 'OrderService'.
+
+25 orderCtrl = new OrderController(new UserService());
+ */
+//orderCtrl = new OrderController(new UserService());
+
+.............................................................................................
+				 interfaces
+.............................................................................................
+
+1.interfaces are common class
+2.having only declarations
+3.can act as super type
+4.we can have multiple implementations
+
+
+//interface
+
+interface Repository {
+    findAll(): string;
+    save(): string;
+}
+
+class OrderSQLRepository implements Repository {
+
+    findAll(): string {
+        return 'OrderSQLRepository findall'
+    }
+    save(): string {
+        return 'OrderSQLRepository save'
+    }
+
+}
+
+class OrderMongoRepository implements Repository {
+
+    findAll(): string {
+        return 'OrderMongoRepository findall'
+    }
+    save(): string {
+        return 'OrderMongoRepository save'
+    }
+
+}
+
+class OrderService {
+    constructor(private repo: Repository) { }
+    findAll(): void {
+        console.log(this.repo.findAll())
+    }
+    save(): void {
+        console.log(this.repo.save())
+    }
+}
+
+let service = new OrderService(new OrderSQLRepository())
+service.findAll();
+service.save()
+
+service = new OrderService(new OrderMongoRepository())
+service.findAll();
+service.save()
+..............................................................................................
+				Inheritance
+
+Types of Inheritance implementation:
+
+1.concrete class 
+2.interfaces - Only In Ts
+3.abstract classes - Only in Ts
 
 
 
+//base class
+class Account {
+    constructor() {
+        console.log('account class')
+    }
+    protected deposit() {
+        return 10;
+    }
+}
+
+class SavingsAccount extends Account {
+    constructor() {
+        super()
+    }
+    //overriding
+    public deposit() {
+        return 1000 * super.deposit();
+    }
+}
+let sb = new SavingsAccount()
+console.log(sb.deposit())
 
 
+...............
+interfaces
+interface Account {
+    deposit(amount: number): number
+}
+interface Calculator {
+    calculate(amount: number): number
+}
+
+class SavingsAccount implements Account, Calculator {
+    constructor() {
+    }
+    calculate(amount: number): number {
+        return amount * 10
+    }
+    //overriding
+    public deposit(): number {
+        return 1000;
+    }
+}
+let sb = new SavingsAccount()
+console.log(sb.deposit(),sb.calculate(111))
 
 
+......
+abstract classes
 
+
+abstract class Account {
+    public getAccountInfo() {
+        return 'AccountInfo'
+    }
+    abstract deposit():number;
+    abstract withdraw():number;
+}
+class SavingsAccount extends Account {
+    constructor() {
+        super()
+    }
+    //overriding
+    public deposit():number {
+        return 1000
+    }
+    withdraw():number {
+        return 300;
+    }
+}
+let sb = new SavingsAccount()
+console.log(sb.deposit(),sb.withdraw(),sb.getAccountInfo())
+..............................................................................................
+				 Generics
+.............................................................................................
+
+//array
+
+//here array can accept any type of value
+// let list = [1, 2, 3, "hello", true];
+
+//array should hold only numbers
+let list: Array<number> = [1, 2, 3];
+
+//custom generics: generic function 
+
+// function accept(item:string){
+//    console.log(item);
+// }
+//Generics Notation
+function accept<T>(item: T) {
+    console.log(item);
+}
+accept<string>("Hell0")
+// accept<string>(12)
+
+function getArray<T>(items: T[]): T[] {
+    return new Array<T>().concat(items);
+}
+
+let myNumArr = getArray<number>([100, 200, 300]);
+let myStrArr = getArray<string>(["Hello", "World"]);
+
+myNumArr.push(400); // OK
+myStrArr.push("Hello TypeScript"); // OK
+
+// myNumArr.push("Hi"); // Compiler Error
+// myStrArr.push(500); // Compiler Error
+//
+//multiple args
+
+function displayType<T, U>(id: T, name: U): void {
+    console.log(typeof (id) + ", " + typeof (name));
+}
+
+displayType<number, string>(1, "Steve"); // number, string
+
+///////////////////////////////////////////////////////////////////////////////////
+
+class Person {
+    firstName: string;
+    lastName: string;
+
+    constructor(fname:string,  lname:string) { 
+        this.firstName = fname;
+        this.lastName = lname;
+    }
+}
+
+//T can accept only type of Person only
+
+function display<T extends Person>(per: T): void {
+    console.log(`${ per.firstName} ${per.lastName}` );
+}
+var per = new Person("Bill", "Gates");
+display(per); //Output: Bill Gates
+
+// display("Bill Gates");//Compiler Error
+
+
+Builtin Generics classes in javascript:
+
+1.Array
+2.Promise
+..............................................................................................
+					Object Types
+..............................................................................................
+
+literal objects:
+
+let user = { 
+   id:1,
+   name:'Subramanian'
+}
+
+Object types if you want to define we have lot of patterns
+
+1.class - class can act as type
+2.interface -interface can act as type
+3.type keyword 
+
+
+//Object types
+
+//class as a type
+class Props {
+    id: number;
+    url: string;
+    className?: string;
+    target?: string;
+    varient?: "dark" | "light"
+}
+
+/**
+ * - error TS2322: Type 'string' is not assignable to type 'number'.
+
+12     id: "1",
+       ~~
+
+  src/index.ts:5:5
+    5     id: number;
+          ~~
+    The expected type comes from property 'id' which is declared here on type 'Props'
+ */
+// let props :Props = {
+//     id: "1",
+//     url: 'http://wwww.example.com',
+//     className: 'dark',
+//     target: 'home'
+// }
+
+let props: Props = {
+    id: 1,
+    url: 'http://wwww.example.com',
+    className: 'dark',
+    target: 'home'
+}
+
+/**
+ *  error TS2739: Type '{ id: number; url: string; }' is missing the following properties from type 'Props': className, target
+
+37 let newProps :Props = {
+       ~~~~~~~~
+
+       Here ts not only sees the type of variable but also property existence.
+       Ts forces us to have all properties
+ */
+// let newProps :Props = {
+//     id: 1,
+//     url: 'http://wwww.example.com'   
+// }
+
+//my req : only id and url : required propert and optional property
+let newProps: Props = {
+    id: 1,
+    url: 'http://wwww.example.com',
+    varient: "light"
+}
+
+
+interface as Type:
+//Object types
+
+//class as a type
+interface Props {
+    id: number;
+    url: string;
+    className?: string;
+    target?: string;
+    varient?: "dark" | "light" 
+}
+
+let newProps: Props = {
+    id: 1,
+    url: 'http://wwww.example.com',
+    varient: "light"
+}
+...........................................................................................
+
+Nested Objects and types
+........................
+
+//
+
+interface Person {
+    id: number;
+    name: string;
+    address: {
+        city: string
+        state?: string
+        country?: string
+    } | null,
+    status?: boolean
+    gender?: 'Male' | 'Female' | 'Thrid'
+}
+
+let customer: Person = {
+    id: 1,
+    name: 'Ram',
+    address: {
+        city: 'Coimbatore'
+    },
+    gender: 'Male'
+}
+.............................................................................................
 
 
 
