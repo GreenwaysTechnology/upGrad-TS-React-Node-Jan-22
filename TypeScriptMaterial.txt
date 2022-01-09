@@ -1804,6 +1804,30 @@ let student = new Student("Subramanian", "Murugan") as any
 console.log(`${student.firstName} ${student.lastName} is learning ${student.course.name} in ${student.course.duration} `)
 ...........................................................................................
 
+Types of decorators:
+
+1.class decorator
+2.field decorators
+3.method decorators
+
+.............................................................................................
+				Javascript Modules Patterns
+.............................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
