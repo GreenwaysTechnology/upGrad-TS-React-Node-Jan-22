@@ -1,69 +1,67 @@
-//Redux core concepts
-import { createStore, combineReducers } from "redux";
-import produce from "immer";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch, Provider } from "react-redux";
+import { createSlice, createAsyncThunk, configureStore } from "@reduxjs/toolkit";
+import ReactDOM from 'react-dom'
 
-//actions / actions constants
-export const increment = 'counter/increment';
-export const decrement = 'counter/decrement';
-export const incrementByAmount = 'counter/incrementByAmount '
-
-//reducer-1
-export const incrementReducer = (state = { value: 0 }, action) => {
-    switch (action.type) {
-        case increment:
-            return produce(state, draft => {
-                draft.value++
-            })
-        case incrementByAmount:
-            return produce(state, draft => {
-                draft.value += action.payload
-            })
-        default:
-            return state;
+export const getUsers = createAsyncThunk(
+    "users/getUsers", //reducer Name
+    async (dispatch, getState) => {
+        return await fetch("https://jsonplaceholder.typicode.com/users").then(
+            (res) => res.json()
+        );
     }
+);
+
+const usersSlice = createSlice({
+    name: "user",
+    initialState: {
+        users: [],
+        status: null, //used by spinners for tracking various flows
+    },
+    extraReducers: {
+        [getUsers.pending]: (state, action) => {
+            state.status = "loading";
+
+        },
+        [getUsers.fulfilled]: (state, action) => {
+            state.status = "success";
+            state.users = action.payload;
+        },
+        [getUsers.rejected]: (state, action) => {
+            state.status = "failed";
+        },
+    },
+});
+
+const usersReducer = usersSlice.reducer;
+
+const store = configureStore({
+    reducer: {
+        users: usersReducer,
+    },
+});
+
+function UserApp() {
+    const dispatch = useDispatch();
+    const { users } = useSelector((state) => state.users);
+
+    //inital data load
+    useEffect(() => {
+        dispatch(getUsers());
+    }, [dispatch]);
+
+    return (
+        <div className="App">
+            <h1>React Redux Toolkit - Middleware</h1>
+            {users && users.map((user, i) => <h1 key={i}>{user.name}</h1>)}
+        </div>
+    );
 }
 
-export const decrementReducer = (state = { value: 0 }, action) => {
-    switch (action.type) {
-        case decrement:
-            return produce(state, draft => {
-                draft.value--
-            })
-        default:
-            return state;
-    }
-}
+const App = props => <div>
+    <Provider store={store}>
+        <UserApp />
+    </Provider>
 
-//coimbe
-const rootReducer = combineReducers({
-    increment: incrementReducer,
-    decrementReducer: decrementReducer
-})
-
-//create store Object
-const store = createStore(rootReducer)
-
-//view layer :listener for listening data
-store.subscribe(function () {
-    console.log(store.getState());
-})
-
-//request sending 
-const incrementAction = {
-    type: increment
-}
-store.dispatch(incrementAction)
-store.dispatch(incrementAction)
-store.dispatch({
-    type: increment
-})
-store.dispatch({
-    type: decrement
-})
-const incByAmountCreator = payload => ({
-    type: incrementByAmount,
-    payload
-})
-//
-store.dispatch(incByAmountCreator(200))
-
+</div>
+ReactDOM.render(<App />, document.getElementById('root'))
